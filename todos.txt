@@ -1,5 +1,5 @@
 //todo apunta lo dle usehash, y a ver para que es--> si no lo ponemos, en el index.html hace falta
-
+//todo que es un endpoint
 leer:
 https://codecraft.tv/courses/angular/routing/routing-strategies/
 
