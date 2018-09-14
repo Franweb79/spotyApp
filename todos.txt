@@ -1,0 +1,21 @@
+//todo apunta lo dle usehash, y a ver para que es--> si no lo ponemos, en el index.html hace falta
+
+leer:
+https://codecraft.tv/courses/angular/routing/routing-strategies/
+
+
+
+Si no usas el #, y es un servidor apache tradicional, debes de modificar el htaccess para que todas las peticiones pasen por el index.html en el cual corre tu aplicación de Angular.
+
+Si no lo haces no hay forma de saber que
+
+tusitio.com/miapp/personas, no contiene archivos y es parte de una aplicación que esta en la raíz de tu aplicación
+
+
+//todo lo del   <base href="/"> . si usamos lo del usehash, no hace falta
+
+//todo estudia las rutas bien
+
+//todo clase 48-->rutas
+
+//todo clase 54->la pleca
