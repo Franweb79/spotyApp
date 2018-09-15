@@ -1,3 +1,35 @@
-<p>
-  search works!
-</p>
+<div class="row">
+
+  <div class="col">
+
+    <input type="text" #buscador (keyup)="buscar(buscador.value)" class="form-control" placeholder="search artist"/>
+
+  </div>
+
+
+</div>
+
+
+<div *ngIf="ArrayArtistasConEsosTerminos.length==0">
+  <!--<mat-spinner></mat-spinner>-->
+
+  Loading...
+
+</div>
+
+<div class="card-columns m-5">
+  <div class="card" *ngFor="let artista of ArrayArtistasConEsosTerminos">
+    <img *ngIf="artista.images.length>0"  class="card-img-top" [src]="artista.images[0].url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{artista.name}}</h5>
+      <p class="card-text" >
+
+        <span *ngFor="let artist of artista.artists" class="badge badge-pill badge-primary">{{artist.name}}</span>
+
+
+
+      </p>
+    </div>
+  </div>
+
+</div>
