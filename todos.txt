@@ -1,23 +1,8 @@
-//todo apunta lo dle usehash, y a ver para que es--> si no lo ponemos, en el index.html hace falta
 //todo que es un endpoint
-//todo lo del httpheaders para mandar el token, y que hay que mandarlo dentro de {} en la peticion get
-//todo lo de la clase 92, el provided in root que nos evita tener que declararun servicio en el prpviders del appmodule. es cosa de angular cli al crear el servicio automaticamente con ello. es una forma automatica d eimportar y proveer servicios
-//todo apuntar que si pongo a una pripiedad las llaves es una propiedad de angula, o sea que es lo mismo:
-[src]="elemento.images[0].url" que src="{{elemento.images[0].url}}"
-//todo mira a ver que son las [] al envolver una prioiedad
 
 
 
 
-
-Si no usas el #, y es un servidor apache tradicional, debes de modificar el htaccess para que todas las peticiones pasen por el index.html en el cual corre tu aplicación de Angular.
-
-Si no lo haces no hay forma de saber que
-
-tusitio.com/miapp/personas, no contiene archivos y es parte de una aplicación que esta en la raíz de tu aplicación
-
-
-//todo lo del   <base href="/"> . si usamos lo del usehash, no hace falta
 
 //todo estudia las rutas bien
 

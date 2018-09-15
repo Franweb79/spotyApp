@@ -12,6 +12,9 @@ https://material.angular.io/guide/theming
 
 */
 
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
 body {
   background-color: black !important;
   color: white !important;
