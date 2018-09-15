@@ -2,7 +2,23 @@
   home works!
 </p>
 
+<div *ngIf="dataReturned.length==0">
+  Loading...
+</div>
 
-<div *ngFor="let elemento of dataReturned">
-  <img src="{{elemento.images[0].url}}"/>
+<div class="card-columns">
+  <div class="card" *ngFor="let elemento of dataReturned">
+    <img class="card-img-top" [src]="elemento.images[0].url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{elemento.name}}</h5>
+      <p class="card-text" >
+
+        <span *ngFor="let artist of elemento.artists" class="badge badge-pill badge-primary">{{artist.name}}</span>
+
+
+
+      </p>
+    </div>
+  </div>
+
 </div>

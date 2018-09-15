@@ -2,8 +2,11 @@
 //todo que es un endpoint
 //todo lo del httpheaders para mandar el token, y que hay que mandarlo dentro de {} en la peticion get
 //todo lo de la clase 92, el provided in root que nos evita tener que declararun servicio en el prpviders del appmodule. es cosa de angular cli al crear el servicio automaticamente con ello. es una forma automatica d eimportar y proveer servicios
-leer:
-https://codecraft.tv/courses/angular/routing/routing-strategies/
+//todo apuntar que si pongo a una pripiedad las llaves es una propiedad de angula, o sea que es lo mismo:
+[src]="elemento.images[0].url" que src="{{elemento.images[0].url}}"
+//todo mira a ver que son las [] al envolver una prioiedad
+
+
 
 
 

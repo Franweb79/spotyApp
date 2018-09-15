@@ -9,49 +9,39 @@ import {SpotifyService} from '../../services/spotify.service';
 })
 export class HomeComponent implements OnInit {
 
-  private _dataReturned:any;
+  private _dataReturned:any[];
 
-  constructor(private _spotify:SpotifyService) { }
+  constructor(private _spotify:SpotifyService) {
+
+    this.dataReturned=[];
+
+  }
 
   ngOnInit() {
 
-      this.assign().then((result)=>{
 
-        this.dataReturned=result["albums"]["items"];
 
-        console.log (this.dataReturned);
+       this._spotify.getNewReleases().subscribe((res:any)=>{
 
-        },(error)=>{
-          console.log ("error");
-      });
+         this.dataReturned=res.albums.items;
+
+         //this.dataReturned=res["albums"]["items"];
+
+         console.log(this.dataReturned);
+
+       },(error)=>{
+
+         console.log(error);
+       });
 
   }
 
-  get dataReturned(): any {
+
+  get dataReturned(): any[] {
     return this._dataReturned;
   }
 
-  set dataReturned(value: any) {
+  set dataReturned(value: any[]) {
     this._dataReturned = value;
-  }
-
-  assign()
-  {
-    return new Promise((resolve,reject)=>{
-
-      this._spotify.getNewReleases().subscribe((res)=>{
-
-        resolve(res);
-
-      },(error)=>{
-
-        reject(error);
-
-      });
-
-
-
-
-    });
   }
 }
