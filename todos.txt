@@ -1,8 +1,10 @@
 //todo que es un endpoint
 
+//todo  pasar a apuntes como estamos haciendo el search component (clase 94 creo) y meter en apuntes los tipos de headers. por ejemplo authorization q se mandan las autiroizaciones y hay bearer, basic...
 
+https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization
 
-
+//todo lo del pipe y map para hacerlo mas legible en el service, porque filtra
 
 //todo estudia las rutas bien
 

@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
        this._spotify.getNewReleases().subscribe((res:any)=>{
 
-         this.dataReturned=res.albums.items;
+         this.dataReturned=res;
 
          //this.dataReturned=res["albums"]["items"];
 
