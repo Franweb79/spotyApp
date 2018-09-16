@@ -4,7 +4,6 @@
 
 https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization
 
-//todo lo del pipe y map para hacerlo mas legible en el service, porque filtra
 
 //todo estudia las rutas bien
 

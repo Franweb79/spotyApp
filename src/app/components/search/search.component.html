@@ -10,13 +10,6 @@
 </div>
 
 
-<div *ngIf="ArrayArtistasConEsosTerminos.length==0">
-  <!--<mat-spinner></mat-spinner>-->
-
-  Loading...
-
-</div>
-
 <div class="card-columns m-5">
   <div class="card" *ngFor="let artista of ArrayArtistasConEsosTerminos">
     <img *ngIf="artista.images.length>0"  class="card-img-top" [src]="artista.images[0].url" alt="Card image cap">
