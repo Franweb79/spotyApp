@@ -15,7 +15,7 @@ export class SpotifyService {
 
   constructor(private _httpClient:HttpClient) {
 
-    this.token="BQCXelszAuN-OVMltTR8J1NX8jV0mois0vjLBiemVyAig-abxxSliGR-4h5tCHzQjQf5KCj_kd6KmEUvTwE";
+    this.token="BQBS-8YeF-jQ7U1HGfbn8sMsHyAG0KVzUVEVdmbd7aq2fXbf8BAGdUNWb4IRjHEIFzs1qCmHCy2a_SMLO_M";
     this.headers=new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     });

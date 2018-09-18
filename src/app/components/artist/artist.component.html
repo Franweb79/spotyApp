@@ -1,6 +1,30 @@
+<app-loading *ngIf="!artistData"></app-loading>
 
 
-<div *ngIf="artistData">
+<div class="row" *ngIf="artistData">
 
-  <h1>{{artistData.name}}</h1>
+  <div class="col-2">
+
+    <img [src]="artistData.images | image" class="img-thumbnail img-circle" alt="artist-picture"/>
+
+  </div>
+
+  <div class="col">
+
+    <h3>{{artistData.name}}</h3>
+
+    <p>
+      <a [href]="artistData.external_urls.spotify" target="_blank">Go to the artist page</a>
+
+    </p>
+  </div>
+
+  <div class="col-4 text-right">
+
+    <button routerLink="/search" class="btn btn-outline-danger">Back to search page</button>
+
+  </div>
+
 </div>
+
+

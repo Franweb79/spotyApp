@@ -1,4 +1,5 @@
 //todo que es un endpoint
+//todo haz bien el loading
 //todo ya puedes copiar esto como oro en paño: https://samwize.com/2013/08/31/simple-http-get-slash-post-request-in-node-dot-js/
 //todo mira a ver las putas rutas de las imagenes, entiende bien porque ha dejado de funcionar la del navbar, el icono d eposity al poner /src/assets... u fi sunciona con la ruta relativa de los puntitos
 /todo meter el pipe que hermos hecho en los apuntes

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SpotifyService} from '../../services/spotify.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-artist',
@@ -35,7 +34,7 @@ export class ArtistComponent implements OnInit {
       .subscribe((res:any)=>{
         this.artistData=res;
 
-        console.log(this.artistData);
+        //console.log(this.artistData);
       })
   }
 
