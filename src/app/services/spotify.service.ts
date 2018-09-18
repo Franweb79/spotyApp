@@ -15,7 +15,7 @@ export class SpotifyService {
 
   constructor(private _httpClient:HttpClient) {
 
-    this.token="BQBS-8YeF-jQ7U1HGfbn8sMsHyAG0KVzUVEVdmbd7aq2fXbf8BAGdUNWb4IRjHEIFzs1qCmHCy2a_SMLO_M";
+    this.token="BQDZulbenn18ZBDJ23Rip-2J0U9ShGnrcfxaOeM8dRWnDXoNNnWD_NcMV2T2MQjwZeDufm4ImhCVGfx1By8";
     this.headers=new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     });
@@ -61,6 +61,17 @@ export class SpotifyService {
 
     return this._httpClient.get( this.getRequestUrl(`artists/${p_artistId}`),{headers});
 
+  }
+
+  /*to get tracks, we must use a country too*/
+  getTopTracks(p_artistId:string,p_countryId:string)
+  {
+    const headers=this.headers;
+
+    return this._httpClient.get( this.getRequestUrl(`artists/${p_artistId}/top-tracks?country=${p_countryId}`),{headers})
+      .pipe(map( (res:any) =>{
+        return res.tracks;
+      }));
   }
 
 

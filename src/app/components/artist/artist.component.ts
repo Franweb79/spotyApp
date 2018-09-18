@@ -13,6 +13,8 @@ export class ArtistComponent implements OnInit {
 
   private _artistData:any;
 
+  private _artistTopTracks:any;
+
 
 
 
@@ -30,13 +32,28 @@ export class ArtistComponent implements OnInit {
 
       this.artistId=res.id;
     });
+
+    /*get artist*/
     this._spotify.getArtistById(this.artistId)
       .subscribe((res:any)=>{
         this.artistData=res;
 
         //console.log(this.artistData);
       })
-  }
+
+    /*get top tracks*/
+
+    this._spotify.getTopTracks(this.artistId,"ES").
+      subscribe( (topTracks:any)=>{
+
+        this.artistTopTracks=topTracks;
+
+        console.log(this.artistTopTracks);
+    });
+  }//oninit
+
+
+
 
   get artistId(): string {
     return this._artistId;
@@ -46,11 +63,22 @@ export class ArtistComponent implements OnInit {
     this._artistId = value;
   }
 
+
   get artistData():any {
     return this._artistData;
   }
 
   set artistData(value:any) {
     this._artistData = value;
+  }
+
+
+
+  get artistTopTracks(): any[] {
+    return this._artistTopTracks;
+  }
+
+  set artistTopTracks(value: any[]) {
+    this._artistTopTracks = value;
   }
 }

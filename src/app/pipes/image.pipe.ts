@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ImagePipe implements PipeTransform {
 
-  transform(arrayImagenes: any[]): string {
+  transform(arrayImagenes: any[], p_index:number): string {
 
     if(!arrayImagenes)/*si es null, undefined...*/
     {
@@ -17,7 +17,7 @@ export class ImagePipe implements PipeTransform {
 
     if(arrayImagenes.length>0)
     {
-      return arrayImagenes[0].url;
+      return arrayImagenes[p_index].url;
     }else{ /*si viene arreglo, pero viene sin posiciones, o vacio -que los hay-, etc*/
       return 'assets/img/no_image_available.jpg';
     }
