@@ -12,8 +12,12 @@ https://material.angular.io/guide/theming
 
 */
 
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
 
+/*circle, same spotify color*/
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #1ED760;
+}
 
 body {
   background-color: black !important;

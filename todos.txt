@@ -1,5 +1,7 @@
 //todo que es un endpoint
-
+//todo ya puedes copiar esto como oro en paño: https://samwize.com/2013/08/31/simple-http-get-slash-post-request-in-node-dot-js/
+//todo mira a ver las putas rutas de las imagenes, entiende bien porque ha dejado de funcionar la del navbar, el icono d eposity al poner /src/assets... u fi sunciona con la ruta relativa de los puntitos
+/todo meter el pipe que hermos hecho en los apuntes
 //todo  pasar a apuntes como estamos haciendo el search component (clase 94 creo) y meter en apuntes los tipos de headers. por ejemplo authorization q se mandan las autiroizaciones y hay bearer, basic...
 
 https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization
@@ -10,3 +12,13 @@ https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization
 //todo clase 48-->rutas
 
 //todo clase 54->la pleca
+
+//TODO LINKS A COPIAR POR AHI
+
+https://samwize.com/2013/08/31/simple-http-get-slash-post-request-in-node-dot-js/
+
+https://github.com/request/request
+
+https://samwize.com/2013/08/29/getting-started-with-node-dot-js-scripting/
+
+https://medium.freecodecamp.org/really-really-basic-routing-in-nodejs-with-express-d7cad5e3f5d5

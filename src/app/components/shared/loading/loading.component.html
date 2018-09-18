@@ -2,8 +2,12 @@
 
 
 
-<div *ngIf="( dataReturned && dataReturned.length==0 && buscador.length !=0) " [ngStyle]="{'width':'20%','margin':'0 auto','margin-top':'35px'}">
-  <mat-spinner></mat-spinner>
+<div class="row" *ngIf="( dataReturned && dataReturned.length==0 && buscador && buscador.length !=0) " [ngStyle]="{'margin-top':'35px'}">
+  <div class="col">
+
+  <mat-spinner style="margin:0 auto;"></mat-spinner>
+
+  </div>
 
 
 

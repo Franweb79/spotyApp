@@ -10,9 +10,31 @@
 </div>
 
 
+
+<app-loading [dataReturned]="ArrayArtistasConEsosTerminos" [buscador]="buscador.value"></app-loading>
+
+<app-tarjetas [dataReturned]="ArrayArtistasConEsosTerminos"></app-tarjetas>
+
+<!--
+
 <div class="card-columns m-5">
   <div class="card" *ngFor="let artista of ArrayArtistasConEsosTerminos">
-    <img *ngIf="artista.images.length>0"  class="card-img-top" [src]="artista.images[0].url" alt="Card image cap">
+
+
+   <!--SOLUCION FACIL PARA LA FOTO, CON NGIF Y ELSE, PERO VAMOS A HACERLO CON PIPES
+
+
+   <img *ngIf="artista.images.length>0;else noImage"  class="card-img-top" [src]="artista.images[0].url" alt="Card image cap">
+    <ng-template #noImage>
+      <img class="card-img-top" src="../../../assets/img/no_image_available.jpg" alt="Card image cap">
+    </ng-template>-->
+
+    <!-- CON PIPES-->
+
+  <!--
+
+    <img class="card-img-top" [src]="artista.images | image" alt="Card image cap">
+
     <div class="card-body">
       <h5 class="card-title">{{artista.name}}</h5>
       <p class="card-text" >
@@ -26,3 +48,4 @@
   </div>
 
 </div>
+-->

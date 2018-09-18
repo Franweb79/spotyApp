@@ -15,10 +15,18 @@ export class SpotifyService {
 
   constructor(private _httpClient:HttpClient) {
 
-    this.token="BQBKcKRfTisMUEoIm_wo-XiSoHQY1Yhf-PTVbCbHJuPBOkuhZUceNpc-BWK4euUkPeyFxIzHCBmVtxgC7cc";
+    this.token="BQCXelszAuN-OVMltTR8J1NX8jV0mois0vjLBiemVyAig-abxxSliGR-4h5tCHzQjQf5KCj_kd6KmEUvTwE";
     this.headers=new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     });
+  }
+
+  /*to make request on other methods on a more efficient way*/
+  getRequestUrl(query :string)
+  {
+    const url="https://api.spotify.com/v1/";
+
+    return `${url}${query}`;
   }
 
   getNewReleases()
@@ -26,7 +34,7 @@ export class SpotifyService {
 
     const headers=this.headers;
 
-    return this._httpClient.get('https://api.spotify.com/v1/browse/new-releases',{headers})
+    return this._httpClient.get(this.getRequestUrl("browse/new-releases"),{headers})
       .pipe( map( (data:any) =>{
 
         return data.albums.items;
@@ -40,11 +48,19 @@ export class SpotifyService {
     const headers=this.headers;
 
 
-    return this._httpClient.get( `https://api.spotify.com/v1/search?q=${p_termino}&type=artist&limit=20`,{headers})
+    return this._httpClient.get( this.getRequestUrl(`search?q=${p_termino}&type=artist&limit=20`),{headers})
       .pipe( map((res:any)=>{
 
         return res.artists.items;
       }));
+  }
+
+  getArtistById(p_artistId:string)
+  {
+    const headers=this.headers;
+
+    return this._httpClient.get( this.getRequestUrl(`artists/${p_artistId}`),{headers});
+
   }
 
 

@@ -4,6 +4,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {HomeComponent} from './src/app/components/home/home.component';
 import {NotfoundComponent} from './src/app/components/notfound/notfound.component';
 import {SearchComponent} from './src/app/components/search/search.component';
+import {ArtistComponent} from './src/app/components/artist/artist.component';
 
 const routes:Routes = [
   {
@@ -19,6 +20,11 @@ const routes:Routes = [
   {
     path:'search',
     component:SearchComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'artist/:id',
+    component:ArtistComponent,
     pathMatch:'full'
   },
   {

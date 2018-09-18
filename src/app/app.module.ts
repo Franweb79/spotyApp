@@ -15,6 +15,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import {ImagePipe} from './pipes/image.pipe';
+import {TarjetasComponent} from './components/shared/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     NotfoundComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    ImagePipe,
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 
 
-<div class="card-columns">
-  <div class="card" *ngFor="let elemento of dataReturned">
-    <img class="card-img-top" [src]="elemento.images | image" alt="Card image cap">
+<div class="card-columns m-5 " >
+  <div class="card puntero" (click)="showArtist(elemento)" *ngFor="let elemento of dataReturned" >
+    <img class="card-img-top" [src]="elemento.images | image" alt="Card image cap" >
     <div class="card-body">
       <h5 class="card-title">{{elemento.name}}</h5>
       <p class="card-text" >

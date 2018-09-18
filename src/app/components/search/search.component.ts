@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private _spotify:SpotifyService) {
 
-    this.ArrayArtistasConEsosTerminos=[];
+
   }
 
   ngOnInit() {
