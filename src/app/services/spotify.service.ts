@@ -96,7 +96,8 @@ export class SpotifyService {
 
   getTokenFromBackEnd(){
 
-    return this._httpClient.get('http://localhost:8080/get-token');
+    /*'http://localhost:8080/get-token'*/
+    return this._httpClient.get('https://spotiapp-node-backend.herokuapp.com/get-token');
   }
 
 
