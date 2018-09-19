@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SpotifyService} from '../../services/spotify.service';
+import {HttpHeaders} from '@angular/common/http';
 
 
 @Component({
@@ -20,8 +21,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
 
+    /*first we generate the token, then when response is positive,
+
+     */
+    this._spotify.getTokenFromBackEnd().subscribe((res:any)=>{
+
+      this._spotify.token=res.access_token;
+
+      this._spotify.headers=new HttpHeaders({
+        'Authorization': `Bearer ${this._spotify.token}`
+      });
 
 
+      //get new releases once token and headers are generated
       this._spotify.getNewReleases().subscribe((res:any)=>{
 
         this.dataReturned=res;
@@ -34,6 +46,14 @@ export class HomeComponent implements OnInit {
 
         console.log(error);
       });
+
+
+      console.log (this._spotify.token);
+    },(err)=>{
+
+      console.log (err);
+    });
+
 
 
 

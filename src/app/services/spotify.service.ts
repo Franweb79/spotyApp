@@ -15,9 +15,13 @@ export class SpotifyService {
 
   constructor(private _httpClient:HttpClient) {
 
-    this.getTokenFromBackEnd().subscribe((res:any)=>{
+   /* this.getTokenFromBackEnd().subscribe((res:any)=>{
 
       this.token=res.access_token;
+
+      this.headers=new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      });
 
       console.log (this.token);
     },(err)=>{
@@ -25,12 +29,12 @@ export class SpotifyService {
 
     });
 
-
+*/
 
     //this.token="BQAyVLyJ7QM64yZaxueNERynOSvw7l5WCGXHBJ2loZ0LWhRALylvbLug1A64W2TVOA2V2hF7T-YcebJSUms";
-    this.headers=new HttpHeaders({
+    /*this.headers=new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
-    });
+    });*/
   }
 
   /*to make request on other methods on a more efficient way*/

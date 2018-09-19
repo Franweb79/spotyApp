@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SpotifyService} from '../../services/spotify.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
+import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-artist',
@@ -28,6 +29,8 @@ export class ArtistComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
 
     /*get params from route*/
     this._route.params.subscribe((res)=>{
