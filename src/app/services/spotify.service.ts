@@ -15,7 +15,19 @@ export class SpotifyService {
 
   constructor(private _httpClient:HttpClient) {
 
-    this.token="BQAxZWfp4uPKDTz4XPBkfBvFZd8MyAsUmmrNggO_L-BzCkkKtCm_esTlGWQ61raDNLInr0ZSip28Wbzc9iw";
+    this.getTokenFromBackEnd().subscribe((res:any)=>{
+
+      this.token=res.access_token;
+
+      console.log (this.token);
+    },(err)=>{
+
+
+    });
+
+
+
+    //this.token="BQAyVLyJ7QM64yZaxueNERynOSvw7l5WCGXHBJ2loZ0LWhRALylvbLug1A64W2TVOA2V2hF7T-YcebJSUms";
     this.headers=new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     });
@@ -31,6 +43,9 @@ export class SpotifyService {
 
   getNewReleases()
   {
+
+
+
 
     const headers=this.headers;
 
@@ -72,6 +87,12 @@ export class SpotifyService {
       .pipe(map( (res:any) =>{
         return res.tracks;
       }));
+  }
+
+
+  getTokenFromBackEnd(){
+
+    return this._httpClient.get('http://localhost:8080/get-token');
   }
 
 

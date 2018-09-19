@@ -21,20 +21,25 @@ export class HomeComponent implements OnInit {
 
 
 
-       this._spotify.getNewReleases().subscribe((res:any)=>{
 
-         this.dataReturned=res;
+      this._spotify.getNewReleases().subscribe((res:any)=>{
 
-         //this.dataReturned=res["albums"]["items"];
+        this.dataReturned=res;
 
-         console.log(this.dataReturned);
+        //this.dataReturned=res["albums"]["items"];
 
-       },(error)=>{
+        console.log(this.dataReturned);
 
-         console.log(error);
-       });
+      },(error)=>{
+
+        console.log(error);
+      });
+
+
+
 
   }
+
 
 
   get dataReturned(): any[] {
