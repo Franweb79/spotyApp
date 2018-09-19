@@ -39,23 +39,37 @@ export class ArtistComponent implements OnInit {
       this.artistId=res.id;
     });
 
-    /*get artist*/
-    this._spotify.getArtistById(this.artistId)
-      .subscribe((res:any)=>{
-        this.artistData=res;
+    /*get token, when token is ok, get artist and its top tracks*/
+    this._spotify.getTokenFromBackEnd().subscribe((res:any)=> {
 
-        //console.log(this.artistData);
-      })
+      this._spotify.token = res.access_token;
 
-    /*get top tracks*/
+      this._spotify.headers = new HttpHeaders({
+        'Authorization': `Bearer ${this._spotify.token}`
+      });
 
-    this._spotify.getTopTracks(this.artistId,"ES").
+      /*get artist*/
+      this._spotify.getArtistById(this.artistId)
+        .subscribe((res:any)=>{
+          this.artistData=res;
+
+          //console.log(this.artistData);
+        })
+
+      /*get top tracks*/
+
+      this._spotify.getTopTracks(this.artistId,"ES").
       subscribe( (topTracks:any)=>{
 
         this.artistTopTracks=topTracks;
 
         console.log(this.artistTopTracks);
+      });
+
     });
+
+
+
   }//oninit
 
 

@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
         'Authorization': `Bearer ${this._spotify.token}`
       });
 
-
       //get new releases once token and headers are generated
       this._spotify.getNewReleases().subscribe((res:any)=>{
 
