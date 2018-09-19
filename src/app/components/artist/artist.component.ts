@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SpotifyService} from '../../services/spotify.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-artist',
@@ -18,8 +19,10 @@ export class ArtistComponent implements OnInit {
 
 
 
+
   constructor(private _spotify:SpotifyService,
-              private _route:ActivatedRoute) {
+              private _route:ActivatedRoute,
+              private _domSan:DomSanitizer) {
 
 
   }
@@ -53,6 +56,23 @@ export class ArtistComponent implements OnInit {
   }//oninit
 
 
+  /*type can be track, artist, album... and its corresponding id"*/
+  setWidgetPath(p_type:string,p_type_id:string)
+  {
+    const url="https://open.spotify.com/embed";
+
+    const all=`${url}/${p_type}/${p_type_id}`;
+
+    /*if i dont santize, throws an error*/
+
+    /*(last solution --> https://stackoverflow.com/questions/47193997/im-trying-to-dynamically-change-the-url-of-an-iframe-but-im-getting-an-error-un*/
+
+
+    const sanitizedUrl=this._domSan.bypassSecurityTrustResourceUrl(all);
+
+    return sanitizedUrl;
+  }
+
 
 
   get artistId(): string {
@@ -81,4 +101,7 @@ export class ArtistComponent implements OnInit {
   set artistTopTracks(value: any[]) {
     this._artistTopTracks = value;
   }
+
+
+
 }

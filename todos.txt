@@ -7,7 +7,7 @@
 
 https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization
 
-
+//todo lo del sanitize que he hecho en el artist component
 //todo estudia las rutas bien
 
 //todo clase 48-->rutas
