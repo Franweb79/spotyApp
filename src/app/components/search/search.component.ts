@@ -40,11 +40,11 @@ export class SearchComponent implements OnInit {
       .subscribe((res:any)=>{
 
         this.ArrayArtistasConEsosTerminos=res;
-        console.log (res);
+        //console.log (res);
 
       },(error)=>{
 
-        console.log("no");
+        //console.log("no");
         console.log (error);
       });
   }

@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
         //this.dataReturned=res["albums"]["items"];
 
-        console.log(this.dataReturned);
+       // console.log(this.dataReturned);
 
       },(error)=>{
 
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       });
 
 
-      console.log (this._spotify.token);
+      //console.log(this._spotify.token);
     },(err)=>{
 
       console.log (err);

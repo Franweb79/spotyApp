@@ -63,7 +63,7 @@ export class ArtistComponent implements OnInit {
 
         this.artistTopTracks=topTracks;
 
-        console.log(this.artistTopTracks);
+        //console.log(this.artistTopTracks);
       });
 
     });
